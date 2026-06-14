@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "ember",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["serve", "-p", "3000", "C:\\Users\\Samruddhi\\OneDrive\\Documents\\ember"],
+      "port": 3000
+    }
+  ]
+}
