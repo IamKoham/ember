@@ -1,5 +1,5 @@
-import { Storage } from '../storage.js';
-import { showSheet, makeNavState } from '../app.js';
+import { Storage } from '../storage.js?v=2';
+import { showSheet, makeNavState } from '../app.js?v=2';
 
 const CX = 150, CY = 150, R_OUT = 138, R_IN = 40, GAP_DEG = 0.8;
 

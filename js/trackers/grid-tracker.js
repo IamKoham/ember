@@ -27,7 +27,7 @@ export function renderMonthRectGrid(container, { colorFn, labelFn }, data, year,
     if (labelFn && val !== null) {
       const lbl = document.createElement('span');
       lbl.className = 'rect-label';
-      lbl.textContent = labelFn(val);
+      lbl.textContent = '';
       cell.appendChild(lbl);
     }
 
@@ -45,8 +45,11 @@ export function renderMonthRectGrid(container, { colorFn, labelFn }, data, year,
     }
   }
 
+  const wrap = document.createElement('div');
+  wrap.className = 'rect-grid-wrap';
+  wrap.appendChild(grid);
   container.innerHTML = '';
-  container.appendChild(grid);
+  container.appendChild(wrap);
 }
 
 export function renderYearGrid(container, { colorFn }, allData, year, onTap) {

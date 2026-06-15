@@ -1,6 +1,6 @@
-import { Storage } from '../storage.js';
-import { showSheet, buildTrackerHeader, makeNavState } from '../app.js';
-import { renderMonthRectGrid, renderYearGrid } from './grid-tracker.js';
+import { Storage } from '../storage.js?v=2';
+import { showSheet, buildTrackerHeader, makeNavState } from '../app.js?v=2';
+import { renderMonthRectGrid, renderYearGrid } from './grid-tracker.js?v=2';
 
 const OPTIONS = [
   { id: 'none',   label: 'None',     color: '#F0E6D8', emoji: '○' },
@@ -30,6 +30,7 @@ export function renderPeriod(container, navigate) {
     const content = document.createElement('div');
     content.className = 'page-content';
     const gridWrap = document.createElement('div');
+    gridWrap.className = 'grid-fill';
 
     if (nav.view === 'month') {
       const data = Storage.getMonth('period', nav.year, nav.month);

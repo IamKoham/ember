@@ -125,7 +125,7 @@ h1, h2, .tracker-title { font-family: 'Caveat', cursive; }
 .nav-btn.active svg path, .nav-btn.active svg circle { stroke: var(--accent); }
 
 /* ── Page shell ── */
-#app { min-height: calc(100dvh - var(--nav-h)); }
+#app { min-height: calc(100dvh - var(--nav-h)); display: flex; flex-direction: column; }
 .page { display: none; flex-direction: column; min-height: calc(100dvh - var(--nav-h)); }
 .page.active { display: flex; }
 
@@ -207,16 +207,20 @@ h1, h2, .tracker-title { font-family: 'Caveat', cursive; }
 }
 
 /* ── Page content ── */
-.page-content { flex: 1; overflow-y: auto; padding: 10px 12px 80px; }
+.page-content { flex: 1; overflow-y: auto; padding: 10px 12px 80px; display: flex; flex-direction: column; }
 
 /* ── Rectangular month grid ── */
+.grid-fill { flex: 1; display: flex; flex-direction: column; min-height: 0; }
+.rect-grid-wrap { flex: 1; display: flex; flex-direction: column; }
 .rect-grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
+  grid-auto-rows: 1fr;
   gap: 4px;
+  flex: 1;
+  min-height: 0;
 }
 .rect-cell {
-  aspect-ratio: 1;
   border-radius: 6px;
   background: var(--empty);
   border: 2px solid transparent;

@@ -1,4 +1,4 @@
-import { Storage } from './storage.js';
+import { Storage } from './storage.js?v=2';
 
 const TRACKERS = [
   { id: 'mood',    name: 'Mood',    icon: '🌸' },

@@ -1,12 +1,12 @@
-import { renderHome } from './home.js';
-import { renderMood } from './trackers/mood.js';
-import { renderWeather } from './trackers/weather.js';
-import { renderReading } from './trackers/reading.js';
-import { renderPeriod } from './trackers/period.js';
-import { renderWater } from './trackers/water.js';
-import { renderSleep } from './trackers/sleep.js';
-import { renderWheel } from './trackers/wheel.js';
-import { renderSettings } from './settings.js';
+import { renderHome } from './home.js?v=2';
+import { renderMood } from './trackers/mood.js?v=2';
+import { renderWeather } from './trackers/weather.js?v=2';
+import { renderReading } from './trackers/reading.js?v=2';
+import { renderPeriod } from './trackers/period.js?v=2';
+import { renderWater } from './trackers/water.js?v=2';
+import { renderSleep } from './trackers/sleep.js?v=2';
+import { renderWheel } from './trackers/wheel.js?v=2';
+import { renderSettings } from './settings.js?v=2';
 
 const app = document.getElementById('app');
 
