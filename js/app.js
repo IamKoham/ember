@@ -28,16 +28,22 @@ const routes = {
   sleep:    () => renderSleep(app, navigate),
 };
 
-export function navigate(page) {
+export function navigate(page, pushState = true) {
   currentPage = page;
   app.innerHTML = '';
-  // Briefly block pointer events so click from the previous page
-  // doesn't fire on newly rendered elements (e.g. view toggle buttons)
+  // Briefly block pointer events so the tap that triggered navigation
+  // doesn't also fire on newly rendered elements underneath
   app.style.pointerEvents = 'none';
   updateNav(page);
   const render = routes[page];
   if (render) render();
   requestAnimationFrame(() => requestAnimationFrame(() => { app.style.pointerEvents = ''; }));
+  // Push to browser history so the hardware back button navigates within the app
+  if (pushState) {
+    const backDest = ['mood','weather','reading','period','water','sleep'].includes(page)
+      ? 'trackers' : page === 'settings' ? 'wheel' : null;
+    history.pushState({ page, backDest }, '', `#${page}`);
+  }
 }
 
 function updateNav(page) {
@@ -187,5 +193,13 @@ export function initApp() {
     btn.addEventListener('click', () => navigate(btn.dataset.page));
   });
 
-  navigate('home');
+  // Hardware back button navigates within the app instead of exiting
+  window.addEventListener('popstate', e => {
+    const page = e.state?.page;
+    const back = e.state?.backDest;
+    navigate(back || page || 'home', false);
+  });
+
+  history.replaceState({ page: 'home', backDest: null }, '', '#home');
+  navigate('home', false);
 }

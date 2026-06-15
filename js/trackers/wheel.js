@@ -79,6 +79,7 @@ function drawMonthWheel(container, habits, n, ringW, year, month, now) {
   const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
   svg.setAttribute('viewBox', '0 0 300 300');
   svg.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+  svg.style.touchAction = 'manipulation';
 
   // Background circle
   const bg = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
