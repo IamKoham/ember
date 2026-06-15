@@ -56,7 +56,7 @@ export function renderWheel(container, navigate) {
     content.className = 'page-content wheel-page';
 
     if (nav.view === 'month') {
-      drawMonthWheel(content, habits, n, ringW, nav.year, nav.month, now);
+      drawMonthWheel(content, habits, n, ringW, nav.year, nav.month, now, draw);
     } else {
       drawYearView(content, habits, nav.year);
     }
@@ -67,7 +67,7 @@ export function renderWheel(container, navigate) {
   draw();
 }
 
-function drawMonthWheel(container, habits, n, ringW, year, month, now) {
+function drawMonthWheel(container, habits, n, ringW, year, month, now, draw) {
   const daysInMonth = new Date(year, month, 0).getDate();
   const data        = Storage.getMonth('wheel', year, month);
   const degPerDay   = 360 / daysInMonth;

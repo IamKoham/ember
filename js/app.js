@@ -5,7 +5,7 @@ import { renderReading } from './trackers/reading.js?v=2';
 import { renderPeriod } from './trackers/period.js?v=2';
 import { renderWater } from './trackers/water.js?v=2';
 import { renderSleep } from './trackers/sleep.js?v=2';
-import { renderWheel } from './trackers/wheel.js?v=2';
+import { renderWheel } from './trackers/wheel.js?v=3';
 import { renderSettings } from './settings.js?v=2';
 
 const app = document.getElementById('app');
