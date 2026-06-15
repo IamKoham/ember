@@ -58,7 +58,6 @@ function defaultWheelHabits() {
   return [
     { id: 'exercise',  name: 'Exercise',   color: '#E8903A', type: 'binary' },
     { id: 'b12',       name: 'B12 Vitamin', color: '#F2C94C', type: 'binary' },
-    { id: 'read',      name: 'Read',        color: '#7EC8C8', type: 'binary' },
     { id: 'sugar',     name: 'Sugar',       color: '#8BAF8C', type: 'traffic',
       labels: ['≤2 spoons', '3–4 spoons', '5+ spoons'],
       colors: ['#8BAF8C', '#F2C94C', '#C4694F'] },
